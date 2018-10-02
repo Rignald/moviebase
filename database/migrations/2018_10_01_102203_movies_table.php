@@ -16,10 +16,9 @@ class MoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('movie_title');
-            $table->string('genre');
             $table->text('description');
-            $table->string('image');
             $table->date('release_date');
+            $table->string('movie_image');
             $table->timestamps();
         });
     }
