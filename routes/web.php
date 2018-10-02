@@ -18,9 +18,10 @@ Route::get('/', function () {
   return view('welcome', compact('movies'));
 });
 
-Route::get('/movies/{movie}', function ($id) {
-    //  dd($id);
+Route::get('/movies/{movie_id}', function ($id) {
+
     $movie = DB::table('movies')->find($id);
+    dd($movie);
     return view('movie');
 });
 Route::get('/movies', function ($id) {
