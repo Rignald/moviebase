@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MoviesTable extends Migration
+class CreateMoviesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,6 +19,7 @@ class MoviesTable extends Migration
             $table->text('description');
             $table->date('release_date');
             $table->string('movie_image');
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
     }

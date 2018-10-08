@@ -12,22 +12,6 @@
 */
 
 
-Route::get('/', function () {
 
-  $movies = DB::table('movies')->latest()->get();
-  return view('welcome', compact('movies'));
-});
-
-Route::get('/movies/{movie_id}', function ($id) {
-
-    $movie = DB::table('movies')->find($id);
-    //dd($movie);
-    return view('movie.show', compact('movies'));
-});
-
-
-Route::get('/movies', function ($id) {
-
-    $movie = App\Movie::all();
-    return view('movie');
-});
+Route::get('/movies', 'MoviesController@index');
+Route::get('/movies/{movie_id}', 'MoviesController@show');
