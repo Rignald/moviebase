@@ -21,9 +21,11 @@ Route::get('/', function () {
 Route::get('/movies/{movie_id}', function ($id) {
 
     $movie = DB::table('movies')->find($id);
-    dd($movie);
-    return view('movie');
+    //dd($movie);
+    return view('movie.show', compact('movies'));
 });
+
+
 Route::get('/movies', function ($id) {
 
     $movie = App\Movie::all();

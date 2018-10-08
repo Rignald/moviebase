@@ -9,14 +9,15 @@
     <body>
 
           <h1>Moviebase</h1>
-          <ul>
+        <div>
             @foreach ($movies as $movie )
-              <li>{{ $movie->movie_title}}</li>
-              <li>{{ $movie->description}}</li>
-              <li>{{ $movie->genre}}</li>
-              <li>{{ $movie->release_date}}</li>
-              <li>{{ $movie->image}}</li>
+                <div>
+                    <h2>{{ $movie->movie_title}}</h2>
+                    <p>{{ $movie->description}}</p>
+                    <p>{{ $movie->release_date}}</p>
+                    <img src="{{ $movie->movie_image }}" alt="{{ $movie->movie_title}}" title="{{ $movie->movie_title}}">
+                </div>
             @endforeach
-          </ul>
+        </div>
     </body>
 </html>
