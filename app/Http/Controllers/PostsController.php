@@ -10,15 +10,22 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->get();
 
         return view('posts.index', compact('posts'));
     }
 
-    public function show()
+    // wrapmodel binding
+    public function show(Post $post)
     {
-        return view('posts.show');
+        return view('posts.show', compact('post'));
     }
+
+//    public function show($id)
+//    {
+//        $post = Post::find($id);
+//        return view('posts.show', compact('post'));
+//    }
 
     public function create()
     {
