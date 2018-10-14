@@ -25,9 +25,10 @@
         <div class="card">
             <div class="card-block">
                 <form method="POST" action="/posts/{{ $post->id }}}/comments/">
+                    {{ csrf_field() }}
 
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Your comment here" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" placeholder="Your comment here" cols="30" rows="10" name="body" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -35,6 +36,8 @@
                     </div>
 
                 </form>
+
+                @include('layouts.validate')
             </div>
         </div>
 

@@ -20,13 +20,11 @@ class PostsController extends Controller
     {
         return view('posts.show', compact('post'));
     }
-
 //    public function show($id)
 //    {
 //        $post = Post::find($id);
 //        return view('posts.show', compact('post'));
 //    }
-
     public function create()
     {
         return view('posts.create');
@@ -44,7 +42,6 @@ class PostsController extends Controller
         return redirect('/');
 
     }
-
 
     public function edit($id)
     {
